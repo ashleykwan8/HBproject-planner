@@ -9,14 +9,15 @@ if __name__== '__main__':
     connect_to_db(app)
 
 
-# def create_user(email, password):
-#     """Create and return a new user."""
+def create_user(username,password,first_name,last_name):
+    """Create and return a new user."""
 
-#     user = User(email= email, password = password)
+    user = User(username= username, password = password, 
+                first_name=first_name, last_name=last_name)
 
-#     db.session.add(user)
-#     db.session.commit()
+    db.session.add(user)
+    db.session.commit()
 
-#     return user 
+    return user 
 
 
