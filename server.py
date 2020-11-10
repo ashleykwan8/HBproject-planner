@@ -22,17 +22,20 @@ def homepage():
 @app.route('/users', methods=["POST"])
 def register_user(): 
 
-    email = request.form.get('email')
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    username = request.form.get('username')
     password = request.form.get('password')
-    user = crud.get_user_by_email(email)
+
+    user = crud.get_user_by_username(username)
 
     if user:
-        flash('Email already exists!')
+        flash('Username already exists!')
     else:
         crud.create_user(username, password, first_name, last_name)
         flash('Account created successfully!')
 
-    return redirect('/')
+    return render_template("createuser.html")
 
 # @app.route('/users')
 # def user_login():

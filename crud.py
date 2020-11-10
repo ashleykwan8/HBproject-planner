@@ -43,8 +43,8 @@ def create_note(user_text):
     return note
 
 
-def get_user_by_email(email):
+def get_user_by_username(username):
 
-    return User.query.filter(User.email == email).first()
+    return User.query.filter(User.username == username).first()
 
 

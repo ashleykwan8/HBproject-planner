@@ -9,16 +9,17 @@ class User(db.Model):
 
     __tablename__= 'users'
 
-    user_id = db.Column(db.Integer,
+    id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
     username = db.Column(db.String, unique=True)
     password = db.Column(db.String)
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
-    # login = db.relationship('Login', backref='user')
-    # list = db.relationship('List', backref='user')
-    # note = db.relationship('Note, backref='user')
+
+    logins = db.relationship('Login', backref='login_user')
+    lists = db.relationship('List', backref='list_user')
+    notes = db.relationship('Note', backref='note_user')
 
 
 
@@ -31,12 +32,11 @@ class Login(db.Model):
 
     __tablename__= 'logins'
 
-    login_id = db.Column(db.Integer, 
+    id = db.Column(db.Integer, 
                         autoincrement=True,
                         primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-
-    user = db.relationship('User', backref = 'logins')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    accounts = db.relationship('Account', backref='account_login')
 
     def __repr__(self):
         return f'<Login login_id={self.login_id}>'
@@ -46,14 +46,12 @@ class Account(db.Model):
     """Google Calendar Account."""
 
     __tablename__= 'accounts'
-    account_id = db.Column(db.Integer,
+    id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
-    login_id = db.Column(db.Integer, db.ForeignKey('logins.login_id'))
-
-    login = db.relationship('Login', backref = 'accounts')
+    login_id = db.Column(db.Integer, db.ForeignKey('logins.id'))
 
     def __repr__(self):
         return f'<Account account_id={self.account_id} email={self.email}>'
@@ -64,16 +62,14 @@ class List(db.Model):
 
     __tablename__= 'lists'
 
-    list_id = db.Column(db.Integer,
+    id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
 
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-
-    user = db.relationship('User', backref = 'lists')
-
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    entries = db.relationship('Entry', backref='entry_list')
     def __repr__(self):
-        return f'<List list_id={self.list_id}>'
+        return f'<List list_id={self.list_id} user_id={self.user_id}>'
 
 
 class Entry(db.Model):
@@ -81,14 +77,12 @@ class Entry(db.Model):
 
     __tablename__= 'entries'
 
-    entry_id = db.Column(db.Integer,
+    id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
     user_text = db.Column(db.Text)
     # entry_status = db.Column(db.Enum)
-    list_id = db.Column(db.Integer, db.ForeignKey('lists.list_id'))
-
-    list = db.relationship('List', backref = 'entries')
+    list_id = db.Column(db.Integer, db.ForeignKey('lists.id'))
 
     def __repr__(self):
         return f'<Entry entry_id={self.entry_id} user_text={self.user_text}>'
@@ -99,16 +93,14 @@ class Note(db.Model):
 
     __tablename__= 'notes'
 
-    note_id = db.Column(db.Integer,
+    id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
     note_text = db.Column(db.Text)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-
-    user = db.relationship('User', backref = 'notes')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __repr__(self):
-        return f'<Note note_id={self.note_id}>'
+        return f'<Note note_id={self.note_id} user_id={self.user_id}>'
 
 
 
