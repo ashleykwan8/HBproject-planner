@@ -16,6 +16,10 @@ model.db.create_all()
 
 with open('data/users.json') as d:
     user_data = json.loads(d.read())
+with open('data/entry.json') as d:
+    entry_data = json.loads(d.read())
+with open('data/note.json') as d:
+    note_data = json.loads(d.read())
 
 
 users_in_db = []
@@ -30,3 +34,18 @@ for user in user_data:
                                 last_name)
     users_in_db.append(user_db)
 
+
+entries_in_db = []
+for entry in entry_data:
+    user_text = (entry['user_text'])
+
+    entry_db = crud.create_entry(user_text)
+    entries_in_db.append(entry_db)
+
+
+notes_in_db = []
+for note in note_data:
+    note_text = (note['note_text'])
+
+    note_db = crud.create_note(user_text)
+    entries_in_db.append(note_db)

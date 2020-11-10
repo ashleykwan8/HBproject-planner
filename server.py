@@ -29,29 +29,29 @@ def register_user():
     if user:
         flash('Email already exists!')
     else:
-        crud.create_user(email, password)
+        crud.create_user(username, password, first_name, last_name)
         flash('Account created successfully!')
 
     return redirect('/')
 
-@app.route('/users')
-def user_login():
+# @app.route('/users')
+# def user_login():
 
-    email = request.form.get('login-username')
-    password = request.form.get('login-password')
+#     email = request.form.get('login-username')
+#     password = request.form.get('login-password')
 
-    user= crud.get_user_by_email(email)
-    login_password = crud.get_user_by_password(password)
+#     user= crud.get_user_by_email(email)
+#     login_password = crud.get_user_by_password(password)
 
-    session['user'] = User.user_id
+#     session['user'] = User.user_id
 
-    if user:
-        flash('Logged in!')
+#     if user:
+#         flash('Logged in!')
 
-    else:
-        flash('Need to create an account!')
+#     else:
+#         flash('Need to create an account!')
 
-    return redirect('/')
+#     return redirect('/')
 
 
 if __name__ == '__main__':

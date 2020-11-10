@@ -16,8 +16,11 @@ class User(db.Model):
     password = db.Column(db.String)
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
+    # login = db.relationship('Login', backref='user')
+    # list = db.relationship('List', backref='user')
+    # note = db.relationship('Note, backref='user')
 
-    # This will show a list of user objects
+
 
     def __repr__(self):
         return f'<User user_id={self.user_id} username={self.username}>'
@@ -88,7 +91,7 @@ class Entry(db.Model):
     list = db.relationship('List', backref = 'entries')
 
     def __repr__(self):
-        return f'<Entry entry_id={self.entry_id}>'
+        return f'<Entry entry_id={self.entry_id} user_text={self.user_text}>'
 
 
 class Note(db.Model):

@@ -21,3 +21,30 @@ def create_user(username,password,first_name,last_name):
     return user 
 
 
+def create_entry(user_text):
+    """Create an Entry"""
+
+    entry= Entry(user_text= user_text)
+
+    db.session.add(entry)
+    db.session.commit()
+
+    return entry
+
+
+def create_note(user_text):
+    """Create a Note"""
+
+    note = Note(note_text= note_text)
+
+    db.session.add(note)
+    db.session.commit()
+
+    return note
+
+
+def get_user_by_email(email):
+
+    return User.query.filter(User.email == email).first()
+
+
