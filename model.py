@@ -18,7 +18,7 @@ class User(db.Model):
     last_name = db.Column(db.String)
 
     logins = db.relationship('Login', backref='login_user')
-    lists = db.relationship('List', backref='list_user')
+    lists = db.relationship('NewList', backref='newlist_user')
     notes = db.relationship('Note', backref='note_user')
 
 
@@ -57,7 +57,7 @@ class Account(db.Model):
         return f'<Account account_id={self.account_id} email={self.email}>'
 
 
-class List(db.Model):
+class NewList(db.Model):
     """To-Do list."""
 
     __tablename__= 'lists'
@@ -65,11 +65,12 @@ class List(db.Model):
     id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
-
+    name = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     entries = db.relationship('Entry', backref='entry_list')
+
     def __repr__(self):
-        return f'<List list_id={self.list_id} user_id={self.user_id}>'
+        return f'<NewList list_id={self.list_id} user_id={self.user_id}>'
 
 
 class Entry(db.Model):
@@ -82,7 +83,7 @@ class Entry(db.Model):
                         primary_key=True)
     user_text = db.Column(db.Text)
     # entry_status = db.Column(db.Enum)
-    list_id = db.Column(db.Integer, db.ForeignKey('lists.id'))
+    newlist_id = db.Column(db.Integer, db.ForeignKey('lists.id'))
 
     def __repr__(self):
         return f'<Entry entry_id={self.entry_id} user_text={self.user_text}>'
