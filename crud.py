@@ -2,18 +2,16 @@
 
 from model import db, User, Login, Account, NewList, Entry, Note, connect_to_db
 
-#Functions start here!
 
 if __name__== '__main__':
     from server import app
     connect_to_db(app)
 
 
-def create_user(username,password,first_name,last_name):
+def create_user(username,password):
     """Create and return a new user."""
 
-    user = User(username= username, password = password, 
-                first_name=first_name, last_name=last_name)
+    user = User(username= username, password = password)
 
     db.session.add(user)
     db.session.commit()
@@ -23,7 +21,7 @@ def create_user(username,password,first_name,last_name):
 def create_account(email,password,login_id):
     """Create Account."""
 
-    account = Account(email=email,password=password, login_id=login_id)
+    account = Account(email=email, password=password, login_id=login_id)
 
     db.session.add(account)
     db.session.commit()
@@ -73,11 +71,11 @@ def create_note(note_text, user_id):
 
 
 def get_user_by_username(username):
-
+    # print(User.query.filter(User.username == username).first())
     return User.query.filter(User.username == username).first()
 
 def get_user_by_password(password):
-
+    # print(User.query.filter(User.password == password).first())
     return User.query.filter(User.password == password).first()
 
 

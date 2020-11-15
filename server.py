@@ -1,4 +1,4 @@
-"""Server for student planner """
+"""Server for journal """
 
 from flask import Flask
 from flask import (Flask, render_template, request, flash, session,
@@ -33,53 +33,63 @@ def homepage():
 def create_user(): 
     """Create User"""
 
-    first_name = request.form.get('first_name')
-    last_name = request.form.get('last_name')
+    # first_name = request.form.get('first_name')
+    # last_name = request.form.get('last_name')
     username = request.form.get('username')
     password = request.form.get('password')
-    session["user"] = username
 
     user = crud.get_user_by_username(username)
 
     if user:
-        flash('Username already exists!')
+        flash('Account already exists!')
     else:
-        crud.create_user(username, password, first_name, last_name)
+        crud.create_user(username, password)
         flash('Account created successfully!')
-        return redirect('/login')
 
     return redirect('/')
 
 
-@app.route('/login')
-def user_login():
+@app.route('/login', methods=["POST", "GET"])
+def login():
     """Logging in user."""
-
     username = request.form.get('login-username')
     password = request.form.get('login-password')
 
-    user= crud.get_user_by_username(username)
-    login_password = crud.get_user_by_password(password)
 
-    return render_template('login.html')
+    # login_user = crud.get_user_by_username(username)
+    # login_password = crud.get_user_by_password(password)
 
-    if user and login_password:
+    if username == crud.get_user_by_username(username):
         flash('Logged in!')
         return redirect('/stilljournal')
 
     else:
         flash('Account not found!')
-        return redirect('/login')
+        return redirect('/')
+
 @app.route("/logout")
 def logout():
     session.pop("user", None)
+    flash('You are logged out')
     return redirect("/")
 
-@app.route('/stilljournal')
+@app.route('/refresh')
 def access_still_journal():
     """View Still Page"""
+    
+
+
+
+
+
 
     return render_template('still.html')
+
+
+
+
+
+
 
 if __name__ == '__main__':
     connect_to_db(app)

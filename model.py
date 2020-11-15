@@ -1,5 +1,5 @@
 
-"""Models for planner app."""
+"""Models for journal app."""
 
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
@@ -14,8 +14,8 @@ class User(db.Model):
                         primary_key=True)
     username = db.Column(db.String, unique=True)
     password = db.Column(db.String)
-    first_name = db.Column(db.String)
-    last_name = db.Column(db.String)
+    # first_name = db.Column(db.String)
+    # last_name = db.Column(db.String)
 
     logins = db.relationship('Login', backref='login_user')
     lists = db.relationship('NewList', backref='newlist_user')

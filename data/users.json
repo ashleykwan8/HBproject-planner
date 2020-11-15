@@ -1,20 +1,14 @@
 [
     {
         "username": "Sam123",
-        "password": "Hi456",
-        "first_name":"Sam",
-        "last_name": "Thomas"
+        "password": "Hi456"
     },
     {
         "username": "Blue899",
-        "password": "Hello111",
-        "first_name":"Tyler",
-        "last_name": "Klein"
+        "password": "Hello111"
     },
     {
         "username": "Hopper321",
-        "password": "Hop1010",
-        "first_name":"Julie",
-        "last_name": "Hobbs"
+        "password": "Hop1010"
     }
 ]
