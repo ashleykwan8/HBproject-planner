@@ -55,13 +55,13 @@ def login():
     username = request.form.get('login-username')
     password = request.form.get('login-password')
 
-
+    
     # login_user = crud.get_user_by_username(username)
     # login_password = crud.get_user_by_password(password)
 
     if username == crud.get_user_by_username(username):
-        flash('Logged in!')
-        return redirect('/stilljournal')
+        flash('You are Logged In!')
+        return redirect('/refresh')
 
     else:
         flash('Account not found!')
@@ -70,20 +70,32 @@ def login():
 @app.route("/logout")
 def logout():
     session.pop("user", None)
-    flash('You are logged out')
+    flash('You are Logged Out!')
     return redirect("/")
 
 @app.route('/refresh')
-def access_still_journal():
-    """View Still Page"""
+def add_todo_list():
+    """View Refresh Homepage"""
+
+    todos = crud.Todo.query.all()
+
+    return render_template('refresh.html', todos=todos)
+
+@app.route('/add', methods=["POST"])
+def add_item():
+    """Add item to ToDo List"""
+
+    item = request.form.get('todoitem')
+    crud.create_todo(item, False)
+
+    return redirect('/refresh')
+
+@app.route('/update', methods=["POST"])
+def update_list():
     
+    return redirect('/refresh')
 
 
-
-
-
-
-    return render_template('still.html')
 
 
 

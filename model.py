@@ -56,6 +56,14 @@ class Account(db.Model):
     def __repr__(self):
         return f'<Account account_id={self.account_id} email={self.email}>'
 
+class Todo(db.Model): 
+    __tablename__= 'todos'
+    id = db.Column(db.Integer, primary_key=True) 
+    text = db.Column(db.String(200)) 
+    complete = db.Column(db.Boolean) 
+  
+    def __repr__(self): 
+        return f'<ToDo text={self.text} complete={self.complete}>'
 
 class NewList(db.Model):
     """To-Do list."""
@@ -81,12 +89,12 @@ class Entry(db.Model):
     id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
-    user_text = db.Column(db.Text)
+    entry_text = db.Column(db.Text)
     # entry_status = db.Column(db.Enum)
     newlist_id = db.Column(db.Integer, db.ForeignKey('lists.id'))
 
     def __repr__(self):
-        return f'<Entry entry_id={self.entry_id} user_text={self.user_text}>'
+        return f'<Entry entry_id={self.entry_id} entry_text={self.user_text}>'
 
 
 class Note(db.Model):

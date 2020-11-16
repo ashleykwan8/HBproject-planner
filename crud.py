@@ -1,6 +1,6 @@
 """Create, Read, Update, Delete (CRUD) operations."""
 
-from model import db, User, Login, Account, NewList, Entry, Note, connect_to_db
+from model import db, User, Login, Account, Todo, NewList, Entry, Note, connect_to_db
 
 
 if __name__== '__main__':
@@ -37,6 +37,13 @@ def create_login(user_id):
     db.session.commit()
 
     return login
+
+def create_todo(text,complete):
+    """ToDo item"""
+
+    todo = Todo(text=text, complete=False)
+    db.session.add(todo)
+    db.session.commit()
 
 def create_list(name, user_id):
     """Create an List"""
