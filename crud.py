@@ -38,12 +38,24 @@ def create_login(user_id):
 
     return login
 
-def create_todo(text,complete):
+def add_todo(text,complete):
     """ToDo item"""
 
     todo = Todo(text=text, complete=False)
     db.session.add(todo)
     db.session.commit()
+
+    return todo
+
+def complete_item(id):
+    todo = Todo.query.filter_by(id=int(id)).first()
+    todo.complete = True
+
+    db.session.add(todo)
+    db.session.commit()
+
+    return todo
+
 
 def create_list(name, user_id):
     """Create an List"""

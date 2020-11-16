@@ -8,6 +8,7 @@ from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
 import random
+from model import Todo
 
 AFFIRMATION = [
     'You are doing your best!', 'You choose to be happy!', 'You are proud of youself.',
@@ -77,22 +78,25 @@ def logout():
 def add_todo_list():
     """View Refresh Homepage"""
 
-    todos = crud.Todo.query.all()
+    incomplete = Todo.query.filter_by(complete=False).all()
+    complete = Todo.query.filter_by(complete=True).all()
 
-    return render_template('refresh.html', todos=todos)
+    return render_template('refresh.html', incomplete=incomplete, complete=complete)
 
 @app.route('/add', methods=["POST"])
 def add_item():
     """Add item to ToDo List"""
 
     item = request.form.get('todoitem')
-    crud.create_todo(item, False)
+    crud.add_todo(item, False)
 
     return redirect('/refresh')
 
-@app.route('/update', methods=["POST"])
-def update_list():
-    
+@app.route('/complete/<id>')
+def complete_item(id):
+
+    crud.complete_item(id)
+
     return redirect('/refresh')
 
 
