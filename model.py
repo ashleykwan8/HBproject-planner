@@ -22,7 +22,6 @@ class User(db.Model):
     notes = db.relationship('Note', backref='note_user')
 
 
-
     def __repr__(self):
         return f'<User user_id={self.user_id} username={self.username}>'
 
@@ -82,14 +81,14 @@ class NewList(db.Model):
 
 
 class Entry(db.Model):
-    """"To-Do List entries."""
+    """"Journaling entries."""
 
     __tablename__= 'entries'
 
     id = db.Column(db.Integer,
                         autoincrement=True,
                         primary_key=True)
-    entry_text = db.Column(db.Text)
+    text = db.Column(db.Text)
     # entry_status = db.Column(db.Enum)
     newlist_id = db.Column(db.Integer, db.ForeignKey('lists.id'))
 
@@ -111,7 +110,14 @@ class Note(db.Model):
     def __repr__(self):
         return f'<Note note_id={self.note_id} user_id={self.user_id}>'
 
-
+class Journal(db.Model): 
+    __tablename__= 'journals'
+    id = db.Column(db.Integer, primary_key=True) 
+    text = db.Column(db.String(200)) 
+    complete = db.Column(db.Boolean) 
+  
+    def __repr__(self): 
+        return f'<Journal text={self.text} complete={self.complete}>'
 
 def connect_to_db(flask_app, db_uri='postgresql:///planner', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri

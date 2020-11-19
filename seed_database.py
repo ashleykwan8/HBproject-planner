@@ -32,9 +32,7 @@ for user in user_data:
                                             user['first_name'],
                                             user['last_name'])
     user_db = crud.create_user(username,
-                                password,
-                                first_name,
-                                last_name)
+                                password)
     users_in_db.append(user_db)
 
 login_in_db = []

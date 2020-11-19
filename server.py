@@ -9,6 +9,7 @@ import crud
 from jinja2 import StrictUndefined
 import random
 from model import Todo
+# import send_sms
 
 AFFIRMATION = [
     'You are doing your best!', 'You choose to be happy!', 'You are proud of youself.',
@@ -43,6 +44,10 @@ def create_user():
 
     if user:
         flash('Account already exists!')
+    
+    if len(password) < 5:
+        flash('Password needs to be at least 6 characters or more') 
+
     else:
         crud.create_user(username, password)
         flash('Account created successfully!')
@@ -57,10 +62,9 @@ def login():
     password = request.form.get('login-password')
 
     
-    # login_user = crud.get_user_by_username(username)
-    # login_password = crud.get_user_by_password(password)
-
-    if username == crud.get_user_by_username(username):
+    login_user = crud.get_user_by_username(username)
+    login_password = crud.get_user_by_password(password)
+    if login_user and login_password:
         flash('You are Logged In!')
         return redirect('/refresh')
 
@@ -80,8 +84,11 @@ def add_todo_list():
 
     incomplete = Todo.query.filter_by(complete=False).all()
     complete = Todo.query.filter_by(complete=True).all()
-
-    return render_template('refresh.html', incomplete=incomplete, complete=complete)
+    
+    
+    return render_template('refresh.html', 
+                        incomplete=incomplete, 
+                        complete=complete)
 
 @app.route('/add', methods=["POST"])
 def add_item():
@@ -99,13 +106,12 @@ def complete_item(id):
 
     return redirect('/refresh')
 
+# @app.route('/entry/<id>')
+# def add_entry(id):
 
+#     crud.add_entry(id)
 
-
-
-
-
-
+#     return redirect('/refresh')
 
 if __name__ == '__main__':
     connect_to_db(app)

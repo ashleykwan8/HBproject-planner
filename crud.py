@@ -1,6 +1,6 @@
 """Create, Read, Update, Delete (CRUD) operations."""
 
-from model import db, User, Login, Account, Todo, NewList, Entry, Note, connect_to_db
+from model import db, User, Login, Account, Todo, NewList, Entry, Note, Journal, connect_to_db
 
 
 if __name__== '__main__':
@@ -48,6 +48,8 @@ def add_todo(text,complete):
     return todo
 
 def complete_item(id):
+    """Set item to complete"""
+
     todo = Todo.query.filter_by(id=int(id)).first()
     todo.complete = True
 
@@ -67,10 +69,10 @@ def create_list(name, user_id):
 
     return nlist
 
-def create_entry(user_text, newlist_id):
+def add_entry(id):
     """Create an Entry"""
 
-    entry = Entry(user_text=user_text, newlist_id=newlist_id)
+    entry = Entry.query.filter_by(id=int(id)).first()
 
     db.session.add(entry)
     db.session.commit()
