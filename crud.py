@@ -58,6 +58,15 @@ def complete_item(id):
 
     return todo
 
+def delete_list():
+    """delete the todo list"""
+    
+    db.session.query(Todo).delete()
+    db.session.commit()
+
+    # add a button that will do this function
+
+
 
 def create_list(name, user_id):
     """Create an List"""

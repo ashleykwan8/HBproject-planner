@@ -12,14 +12,13 @@ from model import Todo
 # import send_sms
 
 AFFIRMATION = [
-    'You are doing your best!', 'You choose to be happy!', 'You are proud of youself.',
-    'You are brave!', 'You are Bold and Beautiful!', 'You are Talented and Intelligent!',
-    'You will be kind to yourself.', 'You love yourself.', 'You are grateful for all that you have.'
+    'You are doing your best!', 'Be happy!','You are brave!', 'You are Bold and Beautiful!', 
+    'You are Talented and Intelligent!','Be kind to yourself','Love yourself'
 ]
 
 app = Flask(__name__)
 
-app.secret_key = "still"
+app.secret_key = "ReFresh88192932392"
 app.jinja_env.undefined = StrictUndefined
 
 @app.route('/')
@@ -76,19 +75,26 @@ def login():
 def logout():
     session.pop("user", None)
     flash('You are Logged Out!')
+
     return redirect("/")
 
 @app.route('/refresh')
-def add_todo_list():
+def show_main_page():
     """View Refresh Homepage"""
+    
+    return render_template('refresh.html')
+
+@app.route('/todo')
+def create_todo_list():
+    """Show Todo List"""
 
     incomplete = Todo.query.filter_by(complete=False).all()
     complete = Todo.query.filter_by(complete=True).all()
     
-    
-    return render_template('refresh.html', 
+    return render_template('todo.html', 
                         incomplete=incomplete, 
                         complete=complete)
+
 
 @app.route('/add', methods=["POST"])
 def add_item():
@@ -97,21 +103,30 @@ def add_item():
     item = request.form.get('todoitem')
     crud.add_todo(item, False)
 
-    return redirect('/refresh')
+    return redirect('/todo')
 
 @app.route('/complete/<id>')
 def complete_item(id):
 
     crud.complete_item(id)
 
-    return redirect('/refresh')
+    return redirect('/todo')
 
-# @app.route('/entry/<id>')
-# def add_entry(id):
+@app.route('/delete')
+def delete_list():
+    """Delete complete items"""
 
-#     crud.add_entry(id)
+    crud.delete_list()
 
-#     return redirect('/refresh')
+    return redirect('/todo')
+
+@app.route('/journal')
+def show_journal_page():
+    """View Journal page"""
+    
+    return render_template('journal.html')
+
+
 
 if __name__ == '__main__':
     connect_to_db(app)
