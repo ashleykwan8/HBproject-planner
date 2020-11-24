@@ -1,0 +1,27 @@
+
+h1, h3, h2, p,.additem,.refresh, nav {
+                        text-align: center;
+                        font-family: 'Amatic SC', cursive;
+}
+
+.username,.password {
+        font-family:'Cutive Mono', 
+        monospace;
+        font-size: small;
+}
+
+ul, ol {
+        display: table;
+        margin: 0 auto;
+}       
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flash-msg{
+    color:deeppink
+}
