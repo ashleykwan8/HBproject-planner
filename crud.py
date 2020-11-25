@@ -108,4 +108,18 @@ def get_user_by_password(password):
     # print(User.query.filter(User.password == password).first())
     return User.query.filter(User.password == password).first()
 
+def set_reminder_first_name(first_name):
+
+    first_name = User(first_name = first_name)
+
+    db.session.add(first_name)
+    db.session.commit()
+
+def set_reminder_phone_num(phone_num):
+
+    phone_num = User(phone_num = phone_num)
+    
+    db.session.add(phone_num)
+    db.session.commit()
+
 

@@ -25,3 +25,11 @@ ul, ol {
 .flash-msg{
     color:deeppink
 }
+.sign-up{
+    border: 1px solid black;
+    border-style: dashed;
+    margin-left: 500px;
+    margin-right: 500px;
+
+
+}
