@@ -60,7 +60,8 @@ def login():
     username = request.form.get('login-username')
     password = request.form.get('login-password')
 
-    
+    session['username'] = username
+
     login_user = crud.get_user_by_username(username)
     login_password = crud.get_user_by_password(password)
     if login_user and login_password:
@@ -84,10 +85,20 @@ def show_main_page():
 
     return render_template('refresh.html')
 
-# @app.route('/reminder', methods=["POST"])
-# def set_up_reminder():
+@app.route('/reminder', methods=["POST"])
+def set_up_reminder():
+    phone_num = request.form.get('phone_num')
+    crud.set_reminder_phone_num(phone_num)
 
-#     return redirect('/refresh')
+    user_phone_num = crud.get_user_by_phone_number(phone_num)
+    if user_phone_num:
+        import send_sms
+        
+    else:
+        flash('Phone Number Required!')
+
+    return redirect('/refresh')
+
 
 @app.route('/todo')
 def create_todo_list():
@@ -110,12 +121,14 @@ def add_item():
 
     return redirect('/todo')
 
+
 @app.route('/complete/<id>')
 def complete_item(id):
 
     crud.complete_item(id)
 
     return redirect('/todo')
+
 
 @app.route('/delete')
 def delete_list():
@@ -124,6 +137,7 @@ def delete_list():
     crud.delete_list()
 
     return redirect('/todo')
+
 
 @app.route('/journal')
 def show_journal_page():

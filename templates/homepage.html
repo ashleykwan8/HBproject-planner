@@ -51,26 +51,26 @@
     </form>
   <br>
     
-  <h2>Login</h2>
-    <!-- {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for msg in messages %}
-          <p>{{ msg }}</p>
-        {% endfor %}
-      {% endif %}
-    {% endwith %} -->
-  <form action="/login" method="POST">
-    <p>
-      Username <input class="username" type="text" name="login-username">
-    </p>
+<h2>Login</h2>
+  <!-- {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p>{{ msg }}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %} -->
+<form action="/login" method="POST">
+  <p>
+    Username <input class="username" type="text" name="login-username">
+  </p>
 
-    <p>
-      Password <input class="password" type="password" name="login-password">
-    </p>
+  <p>
+    Password <input class="password" type="password" name="login-password">
+  </p>
 
-    <p>
-      <input type="submit" value="Login">
-    </p>
-  </form>
-  <br>
+  <p>
+    <input type="submit" value="Login">
+  </p>
+</form>
+<br>
   {% endblock %}

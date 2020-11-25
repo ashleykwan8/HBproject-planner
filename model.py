@@ -15,7 +15,7 @@ class User(db.Model):
     username = db.Column(db.String, unique=True)
     password = db.Column(db.String)
     first_name = db.Column(db.String)
-    phone_num = db.Column(db.Integer)
+    phone_num = db.Column(db.String)
 
     logins = db.relationship('Login', backref='login_user')
     lists = db.relationship('NewList', backref='newlist_user')
