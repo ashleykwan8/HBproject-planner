@@ -81,8 +81,13 @@ def logout():
 @app.route('/refresh')
 def show_main_page():
     """View Refresh Homepage"""
-    
+
     return render_template('refresh.html')
+
+# @app.route('/reminder', methods=["POST"])
+# def set_up_reminder():
+
+#     return redirect('/refresh')
 
 @app.route('/todo')
 def create_todo_list():

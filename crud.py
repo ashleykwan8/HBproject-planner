@@ -122,4 +122,7 @@ def set_reminder_phone_num(phone_num):
     db.session.add(phone_num)
     db.session.commit()
 
+def get_user_by_phone_number(phone_num):
+    return User.query.filter(User.phone_num == phone_num).first()
+
 

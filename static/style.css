@@ -4,10 +4,11 @@ h1, h3, h2, p,.additem,.refresh, nav {
                         font-family: 'Amatic SC', cursive;
 }
 
-.username,.password {
+.username,.password, .first_name, .phone_num {
         font-family:'Cutive Mono', 
         monospace;
-        font-size: small;
+        font-size: medium;
+        font-weight: 900;
 }
 
 ul, ol {
@@ -33,3 +34,28 @@ ul, ol {
 
 
 }
+
+CSSResult
+EDIT ON
+html, body {
+  width: 100%;
+  height:100%;
+}
+
+/* body, nav {
+    background: linear-gradient(-45deg, #52eed9, #5ce6e6, #31b7e7, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
