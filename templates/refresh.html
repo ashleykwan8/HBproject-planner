@@ -3,7 +3,6 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<!-- Clean CSS style -->
 <!-- <style>
     h1, h3, h2, .additem{text-align: center;}
     ul, ol {
@@ -35,6 +34,9 @@
         <li class="nav-item">
             <a class="nav-link" href="/journal">Journal</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/meditate">Meditate</a>
+        </li>
     </ul>
         <div class="navbar-nav">
             <form action="/logout" class="form-inline">
@@ -44,13 +46,10 @@
 </nav>
 <br>
 <h1>Set Up for Reminders</h1>
-<h2>If you'd like text message reminders please sign up here!</h2>
+<h2>If you'd like text message reminders, please sign up here!</h2>
 <div class="sign-up">
     <br>
     <form action="/reminder" method="POST">
-        <p>
-        First name: <input class="first_name" type="text" name="first_name">
-        </p>
         <p>
         Phone number: <input class="phone_num" type="text" name="phone_num">
         </p>
@@ -61,51 +60,17 @@
 </div>
 <h2>
 <br>
-    <iframe 
-        src="https://open.spotify.com/embed/album/1axZMmNNnkgxu6Xwm00BGa" 
-        width="280" 
-        height="250" 
-        frameborder="0" 
-        allowtransparency="true" 
-        allow="encrypted-media">
-    </iframe>
-  </h2>
 
-<!-- <h1>Quick Refresh</h1>
-<h3>I Am Grateful For</h3>
-        <ol>
-            <li><input type="text" name="entry_text"></li><br>
-            <li><input type="text" name="entry_text"></li>
-        </ol>
-<h3>What Would Make Today Great?</h3>
-    <ol>
-        <li><input type="text" name="entry4"></li><br>
-        <li><input type="text" name="entry5"></li><br>
-        <li><input type="text" name="entry6"></li>
-    </ol>
+<iframe 
+    src="https://open.spotify.com/embed/album/1axZMmNNnkgxu6Xwm00BGa" 
+    width="280" 
+    height="250" 
+    frameborder="0" 
+    allowtransparency="true" 
+    allow="encrypted-media">
+</iframe>
 
-<h3>Amazing things that happened today...</h3>
-    <ol>
-        <li><input type="text" name="entry7"></li><br>
-        <li><input type="text" name="entry8"></li><br>
-        <li><input type="text" name="entry9"></li>
-    </ol>
-<h3>How could today have been better?</h3>
-    <ol>
-        <li><input type="text" name="entry1"></li><br>
-        <li><input type="text" name="entry2"></li><br>
-        <li><input type="text" name="entry3"></li>
-    </ol>
-<br>
-<form>
-    <button>Refresh</button>
-</form>
 
-<br> -->
-
-<!-- <form action="/logout">
-    <input type="submit" value="Logout">
-</form> -->
 {% endblock %}
 
 

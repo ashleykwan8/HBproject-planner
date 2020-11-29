@@ -72,6 +72,7 @@ def login():
         flash('Account not found!')
         return redirect('/')
 
+
 @app.route("/logout")
 def logout():
     session.pop("user", None)
@@ -79,25 +80,29 @@ def logout():
 
     return redirect("/")
 
+
 @app.route('/refresh')
 def show_main_page():
     """View Refresh Homepage"""
 
     return render_template('refresh.html')
 
+
 @app.route('/reminder', methods=["POST"])
 def set_up_reminder():
+    """User sets up reminders"""
+    
     phone_num = request.form.get('phone_num')
     crud.set_reminder_phone_num(phone_num)
 
     user_phone_num = crud.get_user_by_phone_number(phone_num)
     if user_phone_num:
         import send_sms
-        
+
     else:
         flash('Phone Number Required!')
 
-    return redirect('/refresh')
+    return redirect ('/refresh')
 
 
 @app.route('/todo')
@@ -144,6 +149,14 @@ def show_journal_page():
     """View Journal page"""
     
     return render_template('journal.html')
+
+
+@app.route('/meditate')
+def show_meditate_page():
+    """View Meditation page"""
+
+    return render_template('meditate.html')
+
 
 
 if __name__ == '__main__':

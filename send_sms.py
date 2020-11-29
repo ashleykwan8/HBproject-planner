@@ -9,7 +9,7 @@ auth_token = AUTH_TOKEN
 client = Client(account_sid, auth_token)
 
 message = client.messages.create(
-                     body="Here's a reminder to REFRESH today",
+                     body="A friendly reminder to REFRESH today",
                      from_='+17155977935',
                      to=NUMBER
                  )
