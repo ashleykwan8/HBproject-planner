@@ -17,10 +17,7 @@
 
 body {
     background: url('/static/aaron-burden-2d_g_mx5YnI-unsplash.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
 }
 
 h1, h3, h2, p,.additem,.refresh,nav{
@@ -46,7 +43,6 @@ h1, h3, h2, p,.additem,.refresh,nav{
     text-align: center;
     font-size: 14px;
 }
-
 
 .affirmation {
     font-size: 50px;
