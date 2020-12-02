@@ -64,9 +64,6 @@ def delete_list():
     db.session.query(Todo).delete()
     db.session.commit()
 
-    # add a button that will do this function
-
-
 
 def create_list(name, user_id):
     """Create an List"""
@@ -78,26 +75,15 @@ def create_list(name, user_id):
 
     return nlist
 
-def add_entry(id):
+def add_entry(text):
     """Create an Entry"""
 
-    entry = Entry.query.filter_by(id=int(id)).first()
+    entry = Entry(text=text)
 
     db.session.add(entry)
     db.session.commit()
 
     return entry
-
-
-def create_note(note_text, user_id):
-    """Create a Note"""
-
-    note = Note(note_text= note_text, user_id=user_id)
-
-    db.session.add(note)
-    db.session.commit()
-
-    return note
 
 
 def get_user_by_username(username):

@@ -1,16 +1,57 @@
+.homepage{
+    background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
+    opacity: 0.8;
+    margin-left: 20em;
+    margin-right: 20em;
+}
+
+
+.navbar-custom{
+    background-color:#bbbbbb;
+}
+
+
+.nav-link, .navbar-brand {
+    color: black;
+}
+
+body {
+    background: url('/static/aaron-burden-2d_g_mx5YnI-unsplash.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 
 h1, h3, h2, p,.additem,.refresh,nav{
                         text-align: center;
                         font-family: 'Amatic SC', cursive;
+                        font-size: 25px;
 }
 
-.username,.password, .first_name, .phone_num {
-        font-family:'Cutive Mono', 
-        monospace;
+.username,.password, .first_name, .phone_num { 
         font-size: medium;
         font-weight: 900;
 }
 
+
+.welcome {
+    font-family: 'Cutive Mono', monospace;
+    text-align: center;
+    font-size: 20px;
+}
+
+.intro {
+    font-family: 'Cutive Mono', monospace;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.affirmation {
+    font-size: 50px;
+    font-family:'Dawning of a New Day', cursive;
+}
 ul, ol {
         display: table;
         margin: 0 auto;
@@ -21,41 +62,14 @@ ul, ol {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    font-size: 22px;
 }
 
-.flash-msg{
-    color:deeppink
-}
-.sign-up{
-    border: 1px solid black;
-    border-style: dashed;
-    margin-left: 500px;
-    margin-right: 500px;
-
-
-/* }
-
-CSSResult
-EDIT ON
-html, body {
-  width: 100%;
-  height:100%;
-} */
-
-/* body, nav {
-    background: linear-gradient(-45deg, #52eed9, #5ce6e6, #31b7e7, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+.flash-msg {
+    color:rgb(78, 72, 76)
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-} */
+
+li {
+    list-style-type: none;
+}
