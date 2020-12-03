@@ -1,10 +1,49 @@
-.reminder, .homepage {
+.homepage {
     background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
     opacity: 0.8;
     margin-left: 20em;
     margin-right: 20em;
 }
 
+#welcome {
+    font-size: 70px;
+    font-family:'Dawning of a New Day', cursive;
+    font-weight: 300;
+    margin-top: 1em;
+}
+#title {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+#reminders_title {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px;
+}
+
+#entry {
+    background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
+    opacity: 0.8;
+    border-radius: 25px;
+    margin-left: 1em;
+}
+
+textarea {
+    opacity: 1;
+}
+.affirmation {
+    font-size: 50px;
+    font-family:'Dawning of a New Day', cursive;
+}
+
+.reminder {
+    background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
+    opacity: 0.8;
+    margin-left: 20em;
+    margin-right: 20em;
+    margin-top: 12em;
+}
 .completed, .incomplete{ 
     background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245)) ;
     opacity: 0.3;
@@ -12,11 +51,18 @@
     margin-right: 5em;  
 }
 
+.welcome {
+    font-family:'Dawning of a New Day', cursive;
+    font-size: 50px;
+    text-align: center;
+}
+
 img {
     position: absolute;
-    margin-left: 30em;
-    margin-top: -7em;
+    margin-left: 9em;
+    margin-top: -21em;
     z-index: -1;
+    opacity: 0.5;
 }
 
 .navbar-custom {
@@ -52,21 +98,11 @@ h1, h3, h2, p,.additem,.refresh,nav{
         font-size: 18px;
 }
 
-.welcome {
-    font-family: 'Cutive Mono', monospace;
-    text-align: center;
-    font-size: 20px;
-}
 
 .intro {
     font-family: 'Cutive Mono', monospace;
     text-align: center;
     font-size: 14px;
-}
-
-.affirmation {
-    font-size: 50px;
-    font-family:'Dawning of a New Day', cursive;
 }
 
 .phone_num {

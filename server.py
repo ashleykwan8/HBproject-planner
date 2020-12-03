@@ -9,7 +9,7 @@ import crud
 from jinja2 import StrictUndefined
 import random
 from model import Todo
-# import send_sms
+
 
 AFFIRMATION = [
     'You are doing your best!', 'Be happy!','You are brave!', 'You are Bold and Beautiful!', 
