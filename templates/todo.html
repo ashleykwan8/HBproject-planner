@@ -9,7 +9,7 @@
 
 <div class="refresh">
     <form action='/delete'>
-        <input class="btn btn-primary" type="submit" value="Refresh">
+        <input class="btn btn-outline-dark" type="submit" value="Refresh">
     </form>   
 </div>    
 <div class="container">
@@ -19,7 +19,7 @@
                 <h2 class="mt-4">Add new item to list:</h2> 
                 <form action='/add', method="POST">
                     <input type="text" name="todoitem"> 
-                    <input class="btn btn-primary" type="submit" value="Add">
+                    <input class="btn btn-outline-dark" type="submit" value="Add">
                 </form>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <h2 class="mt-4">Incomplete</h2>
             <ul>
                 {% for todo in incomplete %}
-                <li>{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }}"> <button class="btn btn-info">Completed</button></a></li>
+                <li>{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }} ">  <button class="btn btn-outline-dark"">Completed</button></a></li>
                 {% endfor %}
             </ul>  
         </div>

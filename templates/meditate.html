@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<style>
+    p {
+        font-size: 99px;
+    }
+
+    .meditation {
+        font-size: 30px;
+        background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245)) ;
+        opacity: 0.6;   
+        margin-left: 10em;
+        margin-right: 10em;
+    }
+    .instructions {
+        font-size: 50px;
+    }
+
+</style>
+<br>
+<div class="meditation">
+    <h1 class="instructions">Close your eyes <br> and <br> take deep breaths</h1>
+    <h2>Fill free to put on some calming music or meditate in silence</h2>
+</div>
+<h3>
+    <button class="btn btn-outline-dark" id='start'>start</button>
+</h3>
+<p id="meditate"></p>
+<script src="/static/timer.js"></script>
+
+{% endblock %}

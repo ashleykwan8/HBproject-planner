@@ -1,36 +1,56 @@
-.homepage{
+.reminder, .homepage {
     background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
     opacity: 0.8;
     margin-left: 20em;
     margin-right: 20em;
 }
 
+.completed, .incomplete{ 
+    background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245)) ;
+    opacity: 0.3;
+    margin-left: 5em;
+    margin-right: 5em;  
+}
 
-.navbar-custom{
+img {
+    position: absolute;
+    margin-left: 30em;
+    margin-top: -7em;
+    z-index: -1;
+}
+
+.navbar-custom {
     background-color:#bbbbbb;
+    opacity: 0.7;
 }
 
 
 .nav-link, .navbar-brand {
     color: black;
+    font-size: 22px;
 }
 
 body {
-    background: url('/static/aaron-burden-2d_g_mx5YnI-unsplash.jpg') no-repeat center center fixed;
+    background: url("/static/aaron-burden-2d_g_mx5YnI-unsplash.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
 h1, h3, h2, p,.additem,.refresh,nav{
-                        text-align: center;
-                        font-family: 'Amatic SC', cursive;
-                        font-size: 25px;
+            text-align: center;
+            font-family: 'Amatic SC', cursive;
+            font-size: 23px;
 }
 
-.username,.password, .first_name, .phone_num { 
+.username,.password, .first_name { 
         font-size: medium;
         font-weight: 900;
 }
 
+.description {
+        font-family: 'Cutive Mono', monospace;
+        text-align: center;
+        font-size: 18px;
+}
 
 .welcome {
     font-family: 'Cutive Mono', monospace;
@@ -47,6 +67,11 @@ h1, h3, h2, p,.additem,.refresh,nav{
 .affirmation {
     font-size: 50px;
     font-family:'Dawning of a New Day', cursive;
+}
+
+.phone_num {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 18px;
 }
 ul, ol {
         display: table;
