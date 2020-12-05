@@ -21,7 +21,7 @@ Able to set up daily text message reminders.
 <br><br>
 
 <p align="center">
-<img src="/static/images/reminder.png">
+<img src="/static/Reminder.jpg">
 <br/><br/>
  </p>
 
