@@ -21,7 +21,7 @@ Able to set up daily text message reminders.
 <br><br>
 
 <p align="center">
-<img src="project-planner/static/images/journal.jpg">
+<img src="/static/images/Reminder.jpg">
 <br/><br/>
  </p>
 
