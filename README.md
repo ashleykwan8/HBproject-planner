@@ -21,33 +21,41 @@ Able to set up daily text message reminders.
 <br><br>
 
 <p align="center">
-<img src="/static/Reminder.jpg">
+<img src="/static/images/Reminder.jpg">
 <br/><br/>
  </p>
 
-<!-- If you’re looking for something more specific, there’s a keyword search bar to help you narrow it down:
+The ToDo List helps you keep track of 
+what you need to get done that day, check
+it off as completed, and "refresh" to have
+a new list for the day
 <br><br>
 
 <p align="center">
-<img src="/static/videos/search.gif">
+<img src="/static/images/Todolist.jpg">
 <br/><br/>
  </p>
 
-Once you've found a cocktail you like, you can add it to your favorites or any event that you've created:
+After a long day, write a simple 
+journal entry to help clear the mind 
+and not stress over what to write 
+with guided prompts or free write what's
+on your mind.
 <br><br>
 
 <p align="center">
-<img src="/static/videos/cocktail.gif">
+<img src="/static/images/journal.jpg">
 <br/><br/>
  </p>
 
-In your profile, create your own event to keep track of cocktails you’ve saved so you can quickly look them up and serve them at your next event:
+Needing to take a breather? The meditation
+section provides quiet atmosphere with a 10 minute timer and a visual breathing circle.
 <br><br>
 
 <p align="center">
-<img src="/static/videos/profile.gif">
+<img src="/static/images/meditation.jpg">
 <br><br>
- </p> -->
+ </p>
 
 
 ## <a name="developer"></a>About the Developer
