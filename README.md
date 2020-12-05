@@ -25,7 +25,7 @@ Able to set up daily text message reminders.
 <br/><br/>
  </p>
 
-The ToDo List helps you keep track of 
+The To-Do List helps you keep track of 
 what you need to get done that day, check
 it off as completed, and "refresh" to have
 a new list for the day
