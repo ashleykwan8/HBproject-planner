@@ -21,11 +21,11 @@ Able to set up daily text message reminders.
 <br><br>
 
 <p align="center">
-<img src="/static/images/Reminder.png">
+<img src="/static/images/reminder.png">
 <br/><br/>
  </p>
 
-If you’re looking for something more specific, there’s a keyword search bar to help you narrow it down:
+<!-- If you’re looking for something more specific, there’s a keyword search bar to help you narrow it down:
 <br><br>
 
 <p align="center">
@@ -47,11 +47,11 @@ In your profile, create your own event to keep track of cocktails you’ve saved
 <p align="center">
 <img src="/static/videos/profile.gif">
 <br><br>
- </p>
+ </p> -->
 
 
 ## <a name="developer"></a>About the Developer
 
 Ex-teacher turned Software Engineer wanting to develop applications and programs for our future leaders. 
 
-Learn more about Kerry on her <a href="https://www.linkedin.com/in/ashley-kwan08/" target="_blank">LinkedIn.</a>
+Learn more about Ashley on her <a href="https://www.linkedin.com/in/ashley-kwan08/" target="_blank">LinkedIn.</a>
