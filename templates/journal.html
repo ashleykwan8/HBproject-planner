@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="container">
-    <h1>Quick Refresh</h1>
+    <h1 id="reminders_title" class="mt-3">Quick Refresh</h1>
     <div class="row">
         <div class="col">
             <div id="entry">
@@ -30,7 +30,7 @@
                         <li><textarea rows="3" cols="40"></textarea></li><br>
                         <li><textarea rows="3" cols="40"></textarea></li>
                     </ol>
-                <h3 class="mt-3">How could today have been better?</h3>
+                <div class="mt-3" id="title">How could today have been better?</div>
                     <ol>
                         <li><textarea rows="3" cols="40" placeholder="It could have been better..."></textarea></li><br>
                         <li><textarea rows="3" cols="40"></textarea></li><br>
@@ -40,10 +40,10 @@
         </div>
         <div class="col">
             <div id="entry">
-                <h3 class="mt-3">Free Feelings</h3>
-                <ol>
-                    <li><textarea rows="14" cols="90"></textarea></li><br>
-                </ol>
+                <div class="mt-3" id="title">Free Feelings</div>
+                    <ol>
+                        <li><textarea rows="14" cols="100"></textarea></li><br>
+                    </ol>
             </div>
         </div>
     </div>

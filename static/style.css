@@ -3,23 +3,26 @@
     opacity: 0.8;
     margin-left: 20em;
     margin-right: 20em;
+    border-radius: 25px;
 }
 
-#welcome {
+#welcomehome {
     font-size: 70px;
     font-family:'Dawning of a New Day', cursive;
     font-weight: 300;
     margin-top: 1em;
 }
+
 #title {
     text-align: center;
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
 }
+
 #reminders_title {
     text-align: center;
     font-family: 'Amatic SC', cursive;
-    font-size: 50px;
+    font-size: 55px;
 }
 
 #entry {
@@ -31,9 +34,10 @@
 
 textarea {
     opacity: 1;
+    padding: em;
 }
 .affirmation {
-    font-size: 50px;
+    font-size: 55px;
     font-family:'Dawning of a New Day', cursive;
 }
 
@@ -42,26 +46,27 @@ textarea {
     opacity: 0.8;
     margin-left: 20em;
     margin-right: 20em;
-    margin-top: 12em;
+    margin-top: 10em;
+    border-radius: 25px;
 }
-.completed, .incomplete{ 
+/* .completed, .incomplete{ 
     background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245)) ;
     opacity: 0.3;
     margin-left: 5em;
     margin-right: 5em;  
-}
+} */
 
 .welcome {
-    font-family:'Dawning of a New Day', cursive;
-    font-size: 50px;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 40px;
     text-align: center;
 }
 
 img {
     position: absolute;
-    margin-left: 9em;
-    margin-top: -21em;
     z-index: -1;
+    margin-left: 27em;
+    margin-top: -9em;
     opacity: 0.5;
 }
 
@@ -81,7 +86,7 @@ body {
     background-size: cover;
 }
 
-h1, h3, h2, p,.additem,.refresh,nav{
+h1, h3, h2, p,.additem,.refresh, nav{
             text-align: center;
             font-family: 'Amatic SC', cursive;
             font-size: 23px;
@@ -102,7 +107,7 @@ h1, h3, h2, p,.additem,.refresh,nav{
 .intro {
     font-family: 'Cutive Mono', monospace;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .phone_num {
@@ -130,3 +135,34 @@ ul, ol {
 li {
     list-style-type: none;
 }
+
+.element {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    background-color: rgb(0, 102, 255);
+    animation-name: stretch;
+    animation-duration: 4.3s; 
+    animation-timing-function: ease-out; 
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    opacity: 0.7;
+  }
+  @keyframes stretch {
+    0% {
+      transform: scale(.2);
+      background-color: rgb(112, 158, 172);
+      border-radius: 100%;
+    }
+    50% {
+      background-color: rgb(161, 199, 211);
+      border-radius: 100%;
+    }
+    100% {
+      background-color: rgb(189, 206, 201);
+      border-radius: 100%;
+    }
+  }

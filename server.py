@@ -9,7 +9,7 @@ import crud
 from jinja2 import StrictUndefined
 import random
 from model import Todo
-
+from datetime import datetime 
 
 AFFIRMATION = [
     'You are doing your best!', 'Be happy!','You are brave!', 'You are Bold and Beautiful!', 
@@ -96,7 +96,12 @@ def set_up_reminder():
     crud.set_reminder_phone_num(phone_num)
 
     user_phone_num = crud.get_user_by_phone_number(phone_num)
-    if user_phone_num:
+
+
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+
+    if user_phone_num and current_time == "19:00:00":
         import send_sms
         flash('Thank you for signing up!')
 

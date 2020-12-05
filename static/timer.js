@@ -3,6 +3,7 @@ let time = startingMinutes * 60;
 
 const countdownEl =  document.getElementById('meditate');
 const startButton = document.getElementById('start'); 
+const stopButton = document.getElementById('stop')
 
 function updateTimer() {
     const minutes = Math.floor(time / 60);
@@ -12,9 +13,11 @@ function updateTimer() {
 
     countdownEl.innerHTML = `${minutes}:${seconds}`;
     time --;
-    
-}  
+} 
 
 startButton.addEventListener("click", () => {
     setInterval(updateTimer, 1000);
 }); 
+
+// stopButton.addEventListener("click", myStopFunction())
+

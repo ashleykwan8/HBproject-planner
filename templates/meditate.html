@@ -8,12 +8,13 @@
         font-size: 99px;
     }
 
-    .meditation {
+    #meditation {
         font-size: 30px;
         background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245)) ;
-        opacity: 0.6;   
+        opacity: 0.7;   
         margin-left: 10em;
         margin-right: 10em;
+        border-radius: 25px;
     }
     .instructions {
         font-size: 50px;
@@ -21,14 +22,23 @@
 
 </style>
 <br>
-<div class="meditation">
-    <h1 class="instructions">Close your eyes <br> and <br> take deep breaths</h1>
-    <h2>Fill free to put on some calming music or meditate in silence</h2>
+<div id="meditation" class="mt-3">
+    <h1 class="instructions">Take deep breaths</h1>
+    <h2 id="title">Fill free to put on some calming music or meditate in silence
+        <br>
+        Use the breathing circle to guide you through your breaths 
+    </h2>
 </div>
 <br>
+<div class="element"></div>
+<br>
+<br>
 <h3>
-    <button class="btn btn-outline-dark btn-lg" id='start'>start</button>
+    <button class="btn btn-dark btn-lg" id='start'>start</button>
 </h3>
+<!-- <h3>
+    <button class="btn btn-dark btn-lg" id='stop'>stop</button>
+</h3> -->
 <p id="meditate"></p>
 <script src="/static/timer.js"></script>
 
