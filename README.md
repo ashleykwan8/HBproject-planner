@@ -17,7 +17,7 @@ __APIs:__ Twilio API
 
 ## <a name="features"></a>Features
 
-Able to set up daily text message reminders.
+Set up daily text message reminders.
 <br><br>
 
 <p align="center">

@@ -3,15 +3,34 @@
 {% block title %}{% endblock %}
 
 {% block body %}
+<style>
+    #todo {
+        background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
+        opacity: 0.8;
+        border-radius: 25px;
+        margin-left: 30em;
+        margin-right: 30em;
+    }
+    #refresh {
+        text-align: center;
+        font-family: 'Amatic SC', cursive;
+        font-size: 23px;
+    }
+</style>
 <br>
-<h1>ToDo List</h1>
+<h1 id="reminders_title">ToDo List</h1>
 <br>
-
-<div class="refresh">
-    <form action='/delete'>
-        <input class="btn btn-dark btn-lg" type="submit" value="Refresh">
-    </form>   
-</div>  
+<div id="todo">
+    <h2 class="description">Once you've completed all your todos, you can Refresh
+        your list to start fresh
+    </h2>
+    <div class="mb-4" id="refresh">
+        <form action='/delete'>
+            <input class="btn btn-dark btn-lg" type="submit" value="Refresh">
+        </form>   
+    </div>  
+</div>
+ 
 <br>  
 <div class="container">
     <div class="row">

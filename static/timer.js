@@ -15,9 +15,14 @@ function updateTimer() {
     time --;
 } 
 
-startButton.addEventListener("click", () => {
-    setInterval(updateTimer, 1000);
+// function myStopFunction() {
+//     clearInterval(timer);
+// }
+
+startButton.addEventListener("click", (evt) => {
+    timer = setInterval(updateTimer, 1000);
 }); 
 
-// stopButton.addEventListener("click", myStopFunction())
-
+stopButton.addEventListener("click", (evt) => {
+    clearInterval(timer);
+});

@@ -49,12 +49,7 @@ textarea {
     margin-top: 10em;
     border-radius: 25px;
 }
-/* .completed, .incomplete{ 
-    background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245)) ;
-    opacity: 0.3;
-    margin-left: 5em;
-    margin-right: 5em;  
-} */
+
 
 .welcome {
     font-family: 'Cutive Mono', monospace;
@@ -82,7 +77,7 @@ img {
 }
 
 body {
-    background: url("/static/aaron-burden-2d_g_mx5YnI-unsplash.jpg") no-repeat center center fixed;
+    background: url("/static/images/aaron-burden-2d_g_mx5YnI-unsplash.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -92,10 +87,10 @@ h1, h3, h2, p,.additem,.refresh, nav{
             font-size: 23px;
 }
 
-.username,.password, .first_name { 
+/* .username,.password, .first_name { 
         font-size: medium;
         font-weight: 900;
-}
+} */
 
 .description {
         font-family: 'Cutive Mono', monospace;
@@ -110,9 +105,10 @@ h1, h3, h2, p,.additem,.refresh, nav{
     font-size: 16px;
 }
 
-.phone_num {
+.phone_num,.username,.password, .first_name {
     font-family: 'Cutive Mono', monospace;
     font-size: 18px;
+    font-weight: 900;
 }
 ul, ol {
         display: table;
