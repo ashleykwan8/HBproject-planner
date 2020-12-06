@@ -13,11 +13,6 @@
     margin-top: 1em;
 }
 
-#title {
-    text-align: center;
-    font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-}
 
 #reminders_title {
     text-align: center;
@@ -71,9 +66,16 @@ img {
 }
 
 
-.nav-link, .navbar-brand {
+.nav-link {
     color: black;
     font-size: 22px;
+    font-weight: 800;
+}
+.navbar-brand{
+    color: black;
+    font-size: 27px;
+    font-family:'Dawning of a New Day', cursive;
+    font-weight: 600;
 }
 
 body {
@@ -92,10 +94,11 @@ h1, h3, h2, p,.additem,.refresh, nav{
         font-weight: 900;
 } */
 
-.description {
+.description, #title {
         font-family: 'Cutive Mono', monospace;
         text-align: center;
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 500;
 }
 
 
@@ -124,7 +127,10 @@ ul, ol {
 }
 
 .flash-msg {
-    color:rgb(78, 72, 76)
+    color: white;
+    text-shadow: 2px 2px 5px whitesmoke;
+    font-size: 40px;
+    font-weight: 400;
 }
 
 

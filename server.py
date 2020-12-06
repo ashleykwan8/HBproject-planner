@@ -65,8 +65,16 @@ def login():
     login_user = crud.get_user_by_username(username)
     login_password = crud.get_user_by_password(password)
     if login_user and login_password:
-        flash('You are Logged In!')
+        flash('Successfully Logged In!')
         return redirect('/refresh')
+
+    elif not login_password:
+        flash('Incorrect password!')
+        return redirect('/')
+
+    elif not login_user:
+        flash('Incorrect username!')
+        return redirect('/')
 
     else:
         flash('Account not found!')
@@ -155,11 +163,12 @@ def show_journal_page():
     
     return render_template('journal.html')
 
-@app.route('/save', methods=["POST"])
+@app.route('/save')
 def save_entry():
     """Save Journal Entry"""
-    entry = request.form.get('textarea')
-    crud.add_entry(entry)
+    
+
+    flash('Entries Saved!')
 
     return redirect('/journal')
 

@@ -75,7 +75,7 @@ def create_list(name, user_id):
 
     return nlist
 
-def add_entry(text):
+def save_entry(text):
     """Create an Entry"""
 
     entry = Entry(text=text)
