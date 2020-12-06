@@ -11,11 +11,19 @@
         margin-left: 30em;
         margin-right: 30em;
     }
+    
     #refresh, #incomplete, #complete {
         text-align: center;
         font-family: 'Amatic SC', cursive;
-        font-size: 28px;
+        font-size: 22px;
     }
+
+    #entry {
+    background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
+    opacity: 0.9;
+    border-radius: 25px;
+    margin-left: 2.5em;
+}
     
 </style>
 <br>
@@ -52,7 +60,7 @@
             <ul>
                 {% for todo in incomplete %}
                 <br>
-                <li class="mb-3, description">{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }} "><button class="btn btn-dark"">Complete</button></a></li>
+                <li class="mb-3, description">{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }} "> <button class="btn btn-dark btn-sm">Complete</button></a></li>
                 {% endfor %}
             </ul>  
         </div>

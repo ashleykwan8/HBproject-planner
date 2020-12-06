@@ -21,7 +21,7 @@ Set up daily text message reminders.
 <br><br>
 
 <p align="center">
-<img src="/static/images/Reminder.jpg">
+<img src="/static/images/reminder.jpg">
 <br/><br/>
  </p>
 
@@ -32,7 +32,7 @@ a new list for the day
 <br><br>
 
 <p align="center">
-<img src="/static/images/Todolist.jpg">
+<img src="/static/images/todolist.jpg">
 <br/><br/>
  </p>
 
