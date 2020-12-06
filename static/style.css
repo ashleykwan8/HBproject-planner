@@ -6,6 +6,14 @@
     border-radius: 25px;
 }
 
+textarea {
+    font-family: 'Cutive Mono', monospace;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 1.5em;
+}
+
 #welcomehome {
     font-size: 70px;
     font-family:'Dawning of a New Day', cursive;
@@ -22,15 +30,11 @@
 
 #entry {
     background-image: linear-gradient(to right, rgb(196, 179, 179) , rgb(248, 248, 245));
-    opacity: 0.8;
+    opacity: 0.9;
     border-radius: 25px;
-    margin-left: 1em;
+    margin-left: -1em;
 }
 
-textarea {
-    opacity: 1;
-    padding: em;
-}
 .affirmation {
     font-size: 55px;
     font-family:'Dawning of a New Day', cursive;
@@ -89,16 +93,12 @@ h1, h3, h2, p,.additem,.refresh, nav{
             font-size: 23px;
 }
 
-/* .username,.password, .first_name { 
-        font-size: medium;
-        font-weight: 900;
-} */
 
 .description, #title {
         font-family: 'Cutive Mono', monospace;
         text-align: center;
         font-size: 20px;
-        font-weight: 500;
+        font-weight: 700;
 }
 
 
@@ -142,9 +142,8 @@ li {
     height: 100px;
     width: 100px;
     margin: 0 auto;
-    background-color: rgb(0, 102, 255);
     animation-name: stretch;
-    animation-duration: 4.3s; 
+    animation-duration: 4.5s; 
     animation-timing-function: ease-out; 
     animation-delay: 0;
     animation-direction: alternate;

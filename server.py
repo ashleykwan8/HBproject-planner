@@ -168,7 +168,7 @@ def save_entry():
     """Save Journal Entry"""
     
 
-    flash('Entries Saved!')
+    flash('refreshed!')
 
     return redirect('/journal')
 

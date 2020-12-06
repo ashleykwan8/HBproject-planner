@@ -11,10 +11,10 @@
         margin-left: 30em;
         margin-right: 30em;
     }
-    #refresh {
+    #refresh, #incomplete, #complete {
         text-align: center;
         font-family: 'Amatic SC', cursive;
-        font-size: 23px;
+        font-size: 28px;
     }
     
 </style>
@@ -27,11 +27,12 @@
     <h2 class="description">
         Refresh your list to start anew
     </h2>
-    <div class="mb-4" id="refresh">
+    <div class="mb-1, mt-4" id="refresh">
         <form action='/delete'>
             <input class="btn btn-dark btn-lg" type="submit" value="Refresh">
-        </form>   
+        </form>
     </div>  
+    <br>
 </div>
  
 <br>  
@@ -39,7 +40,7 @@
     <div class="row">
         <div class="col-sm" id="entry">
             <div class="additem">
-                <h2 class="mt-3">Add new item to list:</h2> 
+                <h2 class="mt-2">Add new item to list:</h2> 
                 <form action='/add', method="POST">
                     <input type="text" name="todoitem"> 
                     <input class="mb-3" class="btn btn-dark btn-m" type="submit" value="Add">
@@ -47,19 +48,19 @@
             </div>
         </div>
         <div class="col-sm" id="entry">
-            <h2 class="mt-3">Incomplete</h2>
+            <h2 class="mt-2" id="incomplete">Incomplete</h2>
             <ul>
                 {% for todo in incomplete %}
                 <br>
-                <li class="mb-3">{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }} ">   <button class="btn btn-dark"">Completed</button></a></li>
+                <li class="mb-3, description">{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }} "><button class="btn btn-dark"">Complete</button></a></li>
                 {% endfor %}
             </ul>  
         </div>
         <div class="col-sm" id="entry">
-            <h2 class="mt-3">Complete</h2>
+            <h2 class="mt-2" id="complete">Complete</h2>
             <ul>
                 {% for todo in complete %}
-                <li>{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }}"></a></li>
+                <li class="mb-2, description">{{ todo.text }}<a href="{{ url_for('complete_item', id=todo.id) }}"></a></li>
                 {% endfor %}
             </ul> 
         </div>
