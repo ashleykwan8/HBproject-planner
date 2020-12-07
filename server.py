@@ -34,8 +34,6 @@ def homepage():
 def create_user(): 
     """Create User"""
 
-    # first_name = request.form.get('first_name')
-    # last_name = request.form.get('last_name')
     username = request.form.get('username')
     password = request.form.get('password')
 

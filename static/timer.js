@@ -23,3 +23,5 @@ startButton.addEventListener("click", (evt) => {
 stopButton.addEventListener("click", (evt) => {
     clearInterval(timer);
 });
+
+

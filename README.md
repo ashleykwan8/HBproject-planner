@@ -21,7 +21,7 @@ Set up daily text message reminders.
 <br><br>
 
 <p align="center">
-<img src="/static/images/reminder.jpg">
+<img src="/static/images/create.gif">
 <br/><br/>
  </p>
 
