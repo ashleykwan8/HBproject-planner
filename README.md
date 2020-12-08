@@ -10,7 +10,7 @@
 Wanting to hit the Refresh button at the end of the day? Refresh features a to-do list to help organize throughout the day, a timed self-guided meditation section, and a end-of-the-day guided journal entries to help decompress.
 
 ## <a name="tech-stack"></a>Tech Stack
-__Front End:__ HTML5, Jinja2, JavaScript, AJAX, Bootstrap, CSS<br>
+__Front End:__ HTML5, Jinja, JavaScript, AJAX, JQuery, Bootstrap, CSS<br>
 __Back End:__ Python, Flask, PostgreSQL, SQLAlchemy<br>
 __APIs:__ Twilio API
 <br/>
@@ -21,7 +21,7 @@ Set up daily text message reminders.
 <br><br>
 
 <p align="center">
-<img src="/static/images/create.gif">
+<img src="/static/images/reminder.jpg">
 <br/><br/>
  </p>
 
