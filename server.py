@@ -104,10 +104,10 @@ def set_up_reminder():
     user_phone_num = crud.get_user_by_phone_number(phone_num)
 
 
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
+    # now = datetime.now()
+    # current_time = now.strftime("%H:%M:%S")
 
-    if user_phone_num and current_time == "19:00:00":
+    if user_phone_num:
         import send_sms
         flash('Thank you for signing up!')
 
@@ -165,8 +165,6 @@ def show_journal_page():
 def save_entry():
     """Save Journal Entry"""
     
-
-    flash('refreshed!')
 
     return redirect('/journal')
 

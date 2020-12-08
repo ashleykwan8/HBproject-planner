@@ -2,8 +2,9 @@ const startingMinutes = 10;
 let time = startingMinutes * 60;
 
 const countdownEl =  document.getElementById('meditate');
-const startButton = document.getElementById('start'); 
-const stopButton = document.getElementById('stop')
+// const startButton = document.getElementById('start'); 
+// const startButton = $('#start');
+// const stopButton = document.getElementById('stop')
 
 function updateTimer() {
     const minutes = Math.floor(time / 60);
@@ -15,12 +16,15 @@ function updateTimer() {
     time --;
 } 
 
-
-startButton.addEventListener("click", (evt) => {
+$('#start').on("click", (evt) => {
     timer = setInterval(updateTimer, 1000);
-}); 
+});
 
-stopButton.addEventListener("click", (evt) => {
+// startButton.addEventListener("click", (evt) => {
+//     timer = setInterval(updateTimer, 1000);
+// }); 
+
+$('#stop').on("click", (evt) => {
     clearInterval(timer);
 });
 
